@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form class="form_container" onsubmit="saveData(event)">
+      <div class="logo_container"></div>
+      <div class="title_container">
+        <h1>Daftarkan Akun Anda</h1>
+        <span class="subtitle"
+          >Awali dengan sign up, untuk menggunakan keseluruhan fitur yang kami
+          sediakan</span
+        >
+      </div>
+      <br />
+      <div class="input_container">
+        <label class="input_label" for="email_field">Email</label>
+        <input
+          placeholder="yourname@mail.com"
+          name="email"
+          type="text"
+          class="input_field"
+          id="email"
+        />
+      </div>
+      <div class="input_container">
+        <label class="input_label" for="user_field">Username</label>
+        <input
+          placeholder="Username"
+          name="user"
+          type="text"
+          class="input_field"
+          id="user"
+        />
+      </div>
+      <div class="input_container">
+        <label class="input_label" for="password_field">Password</label>
+        <input
+          placeholder="Password"
+          name="pass"
+          type="password"
+          class="input_field"
+          id="pass"
+        />
+      </div>
+      <div class="input_container">
+        <label class="input_label" for="con_password_field">Konfirmasi Password</label>
+        <input
+          placeholder="Password"
+          name="con_pass"
+          type="password"
+          class="input_field"
+          id="con_pass"
+        />
+      </div>
+      <button title="Sign In" type="submit" class="sign-in_btn">
+        <h3>Sign Up Now</h3>
+      </button>
+    </form>
+</body>
+<script src="index.js"></script>
+</html>
