@@ -7,9 +7,9 @@ session_start();
 $error = '';
 $validate = '';
 
-//mengecek apakah sesssion nama tersedia atau tidak jika tersedia maka akan diredirect ke halaman index
+//mengecek apakah sesssion nama tersedia atau tidak jika tersedia maka akan diredirect ke halaman dashboard
 if (isset($_SESSION['nama'])) {
-  header('Location: index.php');
+  header('Location: dashboard.php');
 }
 
 //mengecek apakah form disubmit atau tidak
@@ -56,14 +56,14 @@ if (isset($_POST['submit'])) {
         $_SESSION['nama'] = $nama;
         $_SESSION['hak_akses'] = "user";
         // alihkan ke halaman dashboard pengurus
-        header("location:index.php");
+        header("location:dashboard.php");
         exit();
       } else {
         // alihkan ke halaman login kembali
-        header("location:index.php?pesan=gagal");
+        header("location:dashboard.php?pesan=gagal");
       }
     } else {
-      header("location:index.php?pesan=gagal");
+      header("location:dashboard.php?pesan=gagal");
     }
   }
 }
@@ -83,23 +83,69 @@ if (isset($_POST['submit'])) {
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
+  <!-- Custom CSS -->
+  <style>
+    .form-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px #888;
+    }
+
+    .form-group label {
+      font-weight: bold;
+    }
+
+    .form-group input {
+      width: 100%;
+      border-radius: 5px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border: none;
+      width: 100%;
+      padding: 10px;
+      font-weight: bold;
+    }
+
+    .btn-primary:hover {
+      background-color: #0069d9;
+    }
+
+    .form-footer {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .form-footer a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .form-footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
   <!-- costum css -->
   <!-- <link rel="stylesheet" href="style.css"> -->
 </head>
 
 <body>
-  <section class="conn$conntainer-fluid mb-4">
-    <!-- justify-conn$conntent-center untuk mengatur posisi form agar berada di tengah-tengah -->
-    <section class="row justify-conn$conntent-center">
-      <section class="col-12 col-sm-6 col-md-4">
-        <form class="form-conn$conntainer" action="login.php" method="POST">
+<section class="conn$conntainer-fluid mb-4">
+<div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="col-12 col-sm-6 col-md-4">
+      <form class="form-container" action="login.php" method="POST">
           <h4 class="text-center font-weight-bold"> Sign-In </h4>
           <?php if ($error != '') { ?>
             <div class="alert alert-danger" role="alert"><?= $error; ?></div>
           <?php } ?>
 
           <div class="form-group">
-            <label for="nama">nama</label>
+            <label for="nama">Username</label>
             <input type="text" class="form-conn$conntrol" id="nama" name="nama" placeholder="Masukkan nama">
           </div>
           <div class="form-group">
@@ -112,7 +158,7 @@ if (isset($_POST['submit'])) {
 
           <button type="submit" name="submit" class="btn btn-primary btn-block" value="LOGIN">Sign In</button>
           <div class="form-footer mt-2">
-            <p> Belum punya account? <a href="register.php">Register</a></p>
+            <p>Belum punya akun? <a href="register.php">Daftar sekarang!</a></p>
           </div>
         </form>
       </section>
