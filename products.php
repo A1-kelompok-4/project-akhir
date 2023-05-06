@@ -5,113 +5,135 @@ $result = mysqli_query($conn, $query);
 session_start();
 
 // if (isset($_POST['pesan'])) {
-// 	header("location:index.php");	
+// 	header("location:dashboard.php");	
 // }
-
-
 ?>
-
 <html>
-
 <head>
-	<title>Products - Alfa Computer</title>
-	<style>
-		.pemesanan>form {
-			width: 250px;
-			display: flex;
-			flex-direction: column;
-			gap: 4px;
-		}
-	</style>
+  <title>Products - Alfa Computer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
 </head>
-
 <body>
-	<header>
-		<h1>Welcome to Alfa Computer!</h1>
-		<nav>
-			<ul>
-				<li><a href="index.php">Home</a></li>
-				<li><a href="products.php">Products</a></li>
-				<li><a href="about.php">About Us</a></li>
-				<li><a href="https://wa.wizard.id/627b7a">Contact Us</a></li>
-				<li><a href="transaksi.php">Riwayat Transaksi</a></li>
-			</ul>
-		</nav>
-	</header>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">Alfa Computer</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="dashboard.php">Home</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="products.php">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.php">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://wa.wizard.id/627b7a">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
 
-	<main>
-		<h2>Featured Products</h2>
-		<input type="text" id="search" placeholder="Search...">
-		<button type="submit" id="submit">Search</button>
-		<br><br>
+  <main class="container my-4">
+    <h2 class="text-center">Featured Products</h2>
+    <table class="table table-striped table-hover" id="example">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>ID Barang</th>
+          <th>Nama Barang</th>
+          <th>Harga</th>
+          <th>Stock</th>
+          <th>Gambar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php
+          $i = 1;
+          while ($row = mysqli_fetch_assoc($result)) { ?>
+            <tr>
+              <td><?php echo $i ?></td>
+              <td><?php echo $row["id_barang"] ?></td>
+              <td><?php echo $row["nama_barang"] ?></td>
+              <td><?php echo $row["harga"] ?></td>
+              <td><?php echo $row["stok"] ?></td>
+              <td>
+                <?php if ($row["img_path"]) { ?>
+                  <a href="<?php echo $row["img_path"] ?>" target="_blank" rel="noopener noreferrer">
+                    <img src="<?php echo $row["img_path"] ?>" alt="<?php echo $row["nama_barang"] ?>" width="50">
+                  </a>
+                <?php } else { ?>
+                  <p>Tidak ada gambar</p>
+                <?php } ?>
+              </td>
+            </tr>
+            <?php $i++ ?>
+        <?php } ?>
+      </tbody>
+    </table>
 
-		<table border="1" cellpadding="10" cellspacing="0" id="data_table">
-			<thead>
-				<tr>
-					<th>no</th>
-					<th>id barang</th>
-					<th>nama barang</th>
-					<th>Harga <button type="button" id="sortAsc">Termurah</button> <button type="button" id="sortDesc">Termahal</button></th>
-					<th>stock</th>
-					<th>gambar</th>
-
-				</tr>
-			</thead>
-			<tbody>
-				<?php
-				$i = 1;
-				while ($row = mysqli_fetch_assoc($result)) { ?>
-					<tr id="data_table[]">
-						<td><?php echo $i ?></td>
-						<td><?php echo $row["id_barang"] ?></td>
-						<td><?php echo $row["nama_barang"] ?></td>
-						<td><?php echo $row["harga"] ?></td>
-						<td><?php echo $row["stok"] ?></td>
-						<?php
-						if ($row["img_path"]) {
-							echo "<td><a href=" . $row["img_path"] . " target=" . "_blank" . " rel=" . "noopener noreferrer" . ">Lihat</a></td>";
-						} else {
-							echo "<td><p>Tidak ada gambar</p></td>";
-						}
-						?>
-					</tr>
-					<?php $i++ ?>
-				<?php } ?>
-			</tbody>
-		</table>
-		<div class="pemesanan">
-			<h2>Pesan Barang : </h2>
-			<form action="pesan_product.php" method="POST">
-				<label for="id_barang">ID Barang</label>
-				<input type="text" name="id_barang" id="id_barang" onchange="getBarangIDFromTable(this.value)">
-				<label for="jumlah_barang">Jumlah</label>
-				<input type="text" name="jumlah_barang" id="jumlah_barang" onchange="hitungTotalHarga(this.value)">
-				<label for="alamat">Alamat</label>
-				<input type="text" name="alamat" id="alamat" onchange="toggleSubmitButton()">
-				<label for="total_harga">Total Harga</label>
-				<input type="text" name="total_harga" id="total_harga" readonly>
-				<div>
-					<button type="submit" name="pesan" id="pesan" disabled>Pesan</button>
-				</div>
-			</form>
-
-			<h2>
-				<?php
-				if (isset($_SESSION['msg'])) {
-					echo $_SESSION['msg'];
-					$_SESSION["msg"] = "";
-				}
-				?>
-			</h2>
-		</div>
-
-	</main>
-	<footer>
-		<p>&copy; 2023 Alfa Computer</p>
-	</footer>
-
-	<script type="text/javascript">
-		let data_table = document.getElementById("data_table").tBodies[0].rows;
+    <div class="pemesanan my-4">
+      <h2 style="text-align: center;">Pesan Barang:</h2>
+	  <br>
+      <form action="pesan_product.php" method="POST">
+        <div class="form-group row">
+          <label for="id_barang" class="col-sm-2 col-form-label">ID Barang</label>
+          <div class="col-sm-10">
+            <input type="text" name="id_barang" id="id_barang" onchange="getBarangIDFromTable(this.value)" class="form-control">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="jumlah_barang" class="col-sm-2 col-form-label">Jumlah</label>
+          <div class="col-sm-10">
+            <input type="text" name="jumlah_barang" id="jumlah_barang" 
+onchange="hitungTotalHarga(this.value)" class="form-control">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="alamat" class="col-sm-2 col-form-label">Alamat</label>
+          <div class="col-sm-10">
+            <input type="text" name="alamat" id="alamat" onchange="toggleSubmitButton()" class="form-control">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="total_harga" class="col-sm-2 col-form-label">Total Harga</label>
+          <div class="col-sm-10">
+            <input type="text" name="total_harga" id="total_harga" readonly class="form-control">
+          </div>
+</div>
+        <div class="form-group row">
+          <div class="col-sm-10 offset-sm-2">
+			<br>
+            <button type="submit" name="pesan" id="pesan" disabled class="btn btn-primary">Pesan</button>
+          </div>
+        </div>
+      </form>
+      <h2>
+        <?php
+        if (isset($_SESSION['msg'])) {
+          echo $_SESSION['msg'];
+          $_SESSION["msg"] = "";
+        }
+        ?>
+      </h2>
+    </div>
+  </main>
+  <footer class="bg-light py-3">
+    <div class="container">
+      <p style="text-align: center;">&copy; 2023 Alfa Computer</p>
+</div>
+  </footer>
+  <script type="text/javascript">
+		let data_table = document.getElementById("example").tBodies[0].rows;
 		let dataBarang = {};
 
 		let id_barangTag = document.getElementById("id_barang");
@@ -148,7 +170,13 @@ session_start();
 		}
 	</script>
 </body>
-
 </html>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="JS/products.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+<!-- <script src="JS/products.js"></script> -->
+<script>
+	$(document).ready(function () {
+    $('#example').DataTable();
+});
+</script>
