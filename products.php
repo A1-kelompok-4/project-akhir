@@ -5,7 +5,7 @@ $result = mysqli_query($conn, $query);
 session_start();
 
 // if (isset($_POST['pesan'])) {
-// 	header("location:dashboard.php");	
+// 	header("location:index.php");	
 // }
 ?>
 <html>
@@ -14,6 +14,7 @@ session_start();
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+  <link rel="stylesheet" href="CSS/style.css" />
 </head>
 <body>
   <header>
@@ -26,7 +27,7 @@ session_start();
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="dashboard.php">Home</a>
+              <a class="nav-link" href="index.php">Home</a>
             </li>
             <li class="nav-item active">
               <a class="nav-link" href="products.php">Products</a>
@@ -82,6 +83,7 @@ session_start();
     </table>
 
     <div class="pemesanan my-4">
+      <br>
       <h2 style="text-align: center;">Pesan Barang:</h2>
 	  <br>
       <form action="pesan_product.php" method="POST">
@@ -117,6 +119,7 @@ onchange="hitungTotalHarga(this.value)" class="form-control">
           </div>
         </div>
       </form>
+     
       <h2>
         <?php
         if (isset($_SESSION['msg'])) {

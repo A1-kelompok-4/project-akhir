@@ -32,6 +32,9 @@ if( !isset($_SESSION['nama']) ){
         padding: 20px;
         text-align: center;
         margin-bottom: 80px; /* tambahkan margin-bottom agar tidak menimpa footer */
+        margin-left: 80px;
+        margin-right: 80px;
+        margin-top: 80px;
         }
          /* Style CSS khusus */
     .swiper-container {

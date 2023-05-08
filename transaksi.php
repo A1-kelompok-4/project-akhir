@@ -44,15 +44,8 @@ $transaksiResult = mysqli_query($conn, $getTransaksiDataQuery);
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
-  <style>
-	 footer {
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        background-color: #f5f5f5;
-        padding: 10px;
-      }
-  </style>
+  <link rel="stylesheet" href="css/style.css" />
+
 </head>
 <body>
   <header>
@@ -65,7 +58,7 @@ $transaksiResult = mysqli_query($conn, $getTransaksiDataQuery);
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="dashboard.php">Home</a>
+              <a class="nav-link" href="index.php">Home</a>
             </li>
             <li class="nav-item active">
               <a class="nav-link" href="products.php">Products</a>
@@ -80,7 +73,7 @@ $transaksiResult = mysqli_query($conn, $getTransaksiDataQuery);
       </div>
     </nav>
   </header>
-	<div class="wrapper">
+	<div class="wrapper" style="background-image: url('img/bg1.png');">
 		<section id="home">
 			<br>
 			<h2 style="text-align: center;">Riwayat Transaksi <?php if ($user['hak_akses'] == 'user') echo "User"; ?></h2>
@@ -94,7 +87,7 @@ $transaksiResult = mysqli_query($conn, $getTransaksiDataQuery);
 				?>
 			</h3>
 			<div class="container">
-    <table class="table table-bordered text-center">
+    <table class="table">
         <thead>
             <tr>
                 <th>ID Transaksi</th>
@@ -166,6 +159,7 @@ $transaksiResult = mysqli_query($conn, $getTransaksiDataQuery);
             } ?>
         </tbody>
     </table>
+    <br>
 </div>
 
 		</section>
