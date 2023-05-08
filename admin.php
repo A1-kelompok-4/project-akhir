@@ -15,14 +15,50 @@ if (!isset($_SESSION['hak_akses']) || (isset($_SESSION['hak_akses']) && $_SESSIO
 
 <!DOCTYPE html>
 <html lang="en">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
 <head>
-    <!-- meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">Alfa Computer</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+                  
+        <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-3">
+        <li class="nav-item">
+            <a class="nav-link" href="index.php">Home</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="products.php">Products</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="about.php">About Us</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://wa.wizard.id/627b7a">Contact Us</a>
+        </li>
+    </ul>
+    <ul class="navbar-nav ms-auto justify-content-end">
+  <li class="nav-item">
+    <a class="nav-link" href="transaksi.php">
+      <img src="https://cdn1.iconfinder.com/data/icons/business-management-and-growth-21/64/1051-128.png" alt="Logo Riwayat Transaksi" style="height: 30px; width: auto;">
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="logout.php">
+      <img src="https://cdn2.iconfinder.com/data/icons/user-interface-line-38/24/Untitled-5-11-128.png" alt="Logo Logout" style="height: 20px; width: auto;">
+    </a>
+  </li>
+</ul>
 
-    <link rel="stylesheet" href="">
+</div>
+</div>
 
+
+        </div>
+      </div>
+    </nav>
 </head>
 
 <body>
