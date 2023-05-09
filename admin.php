@@ -122,3 +122,6 @@ if (!isset($_SESSION['hak_akses']) || (isset($_SESSION['hak_akses']) && $_SESSIO
 <!-- Bootstrap requirement jQuery pada posisi pertama, kemudian Popper.js, dan  yang terakhit Bootstrap JS -->
 
 </html>
+<?php
+include "footer.php";
+?>

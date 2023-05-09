@@ -15,34 +15,22 @@ session_start();
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
   <link rel="stylesheet" href="CSS/style.css" />
+  <style>
+      section {
+        padding: 20px;
+        text-align: center;
+        margin-bottom: 80px; /* tambahkan margin-bottom agar tidak menimpa footer */
+        }
+        
+  </style>
 </head>
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container">
-        <a class="navbar-brand" href="#">Alfa Computer</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="index.php">Home</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="products.php">Products</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.php">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://wa.wizard.id/627b7a">Contact Us</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+  <?php
+include "navbar.php";
+?>
   </header>
+  <section>
 
   <main class="container my-4">
     <h2 class="text-center">Featured Products</h2>
@@ -130,11 +118,7 @@ onchange="hitungTotalHarga(this.value)" class="form-control">
       </h2>
     </div>
   </main>
-  <footer class="bg-light py-3">
-    <div class="container">
-      <p style="text-align: center;">&copy; 2023 Alfa Computer</p>
-</div>
-  </footer>
+
   <script type="text/javascript">
 		let data_table = document.getElementById("example").tBodies[0].rows;
 		let dataBarang = {};
@@ -172,6 +156,7 @@ onchange="hitungTotalHarga(this.value)" class="form-control">
 			toggleSubmitButton()
 		}
 	</script>
+  </section>
 </body>
 </html>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -183,3 +168,6 @@ onchange="hitungTotalHarga(this.value)" class="form-control">
     $('#example').DataTable();
 });
 </script>
+<?php
+include "footer.php";
+?>

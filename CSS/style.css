@@ -48,26 +48,11 @@ button:hover {
     background-color: #092f65;
   }
 
-.footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #d1d1d1;
-    padding: 10px;
-  }
-
 /*   
 TRANSAKSI */
 .div.class.container {
     background-color: rgb(153, 109, 51);
 }
-.footer {
-   position: fixed;
-   bottom: 0;
-   width: 100%;
-   background-color: #d1d1d1;
-   padding: 10px;
- }
 
 .table {
     background-color: rgb(226, 244, 247);
@@ -78,15 +63,3 @@ TRANSAKSI */
     background-color: rgb(74, 122, 150);
 }
 
-/* HEADER */
-header div.container{
-    color: rgb(4, 8, 58);
-}
-/* FOOTER */
-footer div.container {
-    width: 25%;
-    padding: 10px 10px 5px 5px;
-    background-color: rgb(72, 97, 120);
-    color: rgb(20, 16, 65);
-    border-radius: 16px;
-}
