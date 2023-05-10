@@ -153,7 +153,7 @@ $transaksiResult = mysqli_query($conn, $getTransaksiDataQuery);
                             <?php
                             if ($row["status"] != "Sudah dikirim") {
                             ?>
-                                <a href="kirim_barang.php?id_transaksi=<?php echo $row["id_transaksi"] ?>">Kirim Barang</a>
+                                <a href="update_transaksi.php?id_transaksi=<?php echo $row["id_transaksi"] ?>">Kirim Barang</a>
                             <?php
                             }
                             ?>

@@ -92,6 +92,9 @@ if( !isset($_SESSION['nama']) ){
         <li class="nav-item">
             <a class="nav-link" href="https://wa.wizard.id/627b7a">Contact Us</a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="setting.php">profile</a>
+        </li>
     </ul>
     <ul class="navbar-nav ms-auto justify-content-end">
     <li class="nav-item" style="padding-left: 60x;">
