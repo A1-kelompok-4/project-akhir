@@ -78,9 +78,12 @@ Untuk melakukan registrasi karyawan
 - Pertama admin dapat mengklik *“Registrasi Karyawan”*.
 - Kemudian website akan menampilkan form untuk pembuatan akun karyawan. 
 - Selanjutnya admin menginput Username, Password dan ketik kembali Password lalu klik *“Buat”*.
+- Seperti gambar dibawah ini.
+![registrasi akun karyawan(admin)](https://github.com/Aminarti/project-akhir/assets/120153116/87a2be79-6416-423b-8a66-95cc2c464abf)
+
 
 **TAMPILAN WEBSITE (Role = KARYAWAN)**
-![KARYAWAN CRUD](https://github.com/Aminarti/project-akhir/assets/120153116/c5255d41-64d7-48e3-8ad5-10c28f323563)
+![CRUD KARYWAN](https://github.com/Aminarti/project-akhir/assets/120153116/81aa6bd8-8b97-4410-a4d6-5d12d02c40bd)
 Karyawan Alfa Computer bertugas mengelola barang yaitu melakukan edit barang seperti :
 1. Menghapus barang 
 2. Mengupdate barang 
