@@ -65,11 +65,37 @@ function cek_nama($username, $conn)
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
   <!-- costum css -->
-  <link rel="stylesheet" href="style.css">
-  <title>Buat Akun Karyawan</title>
+  <link rel="stylesheet" href="CSS/navbar.css">
+  <title>Registrasi Karyawan</title>
 </head>
 
 <body>
+<nav>
+        <div class="container nav-wrapper">
+            <div class="brand">
+                <img src="img/logo.png" alt="" style="width: 100px;">
+                <span><strong>ALFA COMPUTER</strong></span>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-list nav-center">
+                <li class="active">
+                    <a class="nav-link" href="admin.php">Home</a>
+                </li>
+                <li><a class="nav-link" href="buat_akun_karyawan.php">Registrasi Karyawan</a></li>
+                <li>
+                    </ul>
+                    <ul>
+                      
+                  <a class="nav-link" href="logout.php"><button class="btn">Logout</button></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <br><br><br>
   <section class="container-fluid mb-4">
     <!-- justify-content-center untuk mengatur posisi form agar berada di tengah-tengah -->
     <section class="row justify-content-center">
@@ -87,10 +113,6 @@ function cek_nama($username, $conn)
             <label for="nama">Username</label>
             <input type="text" class="form-control" id="nama" name="username" placeholder="Masukkan Username">
           </div>
-          <!-- <div class="form-group">
-                        <label for="nama">Nama</label>
-                        <input type="text" class="form-control" id="nama" name="nama" aria-describeby="passwordHelp" placeholder="Masukkan password">
-                    </div> -->
           <div class="form-group">
             <label for="InputPassword">Password</label>
             <input type="password" class="form-control" id="InputPassword" name="password" placeholder="Password">
@@ -99,16 +121,12 @@ function cek_nama($username, $conn)
             <label for="InputPassword">Re-Password</label>
             <input type="password" class="form-control" id="InputRePassword" name="repassword" placeholder="Re-Password">
           </div>
-          <!-- <div class="form-group">
-                        <label for="InputAkses">akses</label>
-                        <input type="password" class="form-control" id="InputAkses" name="repassword" placeholder="user">
-                    </div> -->
           <input type="submit" name="submit" class="btn btn-primary btn-block" value="Buat">
         </form>
       </section>
     </section>
   </section>
-
+  <script src="JS/navbar.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

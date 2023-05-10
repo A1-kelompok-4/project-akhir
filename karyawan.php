@@ -19,12 +19,13 @@ $result =mysqli_query($conn, $query);
     background-color: rgb(72, 97, 120);
     color: rgb(20, 16, 65);
     border-radius: 16px;
-}
+} 
 section {
         padding: 20px;
         text-align: center;
         margin-bottom: 80px; /* tambahkan margin-bottom agar tidak menimpa footer */
         }
+        
 </style>
 <body class="mobile">
     <nav>
