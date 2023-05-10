@@ -9,8 +9,52 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <!-- costum css -->
-    <link rel="stylesheet" href="style.css">
+    <style>
+         .form-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px #888;
+    }
+
+    .form-group label {
+      font-weight: bold;
+    }
+
+    .form-group input {
+      width: 100%;
+      border-radius: 5px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border: none;
+      width: 100%;
+      padding: 10px;
+      font-weight: bold;
+    }
+
+    .btn-primary:hover {
+      background-color: #0069d9;
+    }
+
+    .form-footer {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .form-footer a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .form-footer a:hover {
+      text-decoration: underline;
+    }
+    </style>
 </head>
 
 <body>
@@ -72,9 +116,10 @@
         return true;
     }
     ?>
+    <br><br><br>
     <section class="container-fluid mb-4">
         <!-- justify-content-center untuk mengatur posisi form agar berada di tengah-tengah -->
-        <section class="row justify-content-center">
+        <section class="row justify-content-center" style="height: 100vh;">
             <section class="col-12 col-sm-6 col-md-4">
                 <form class="form-container" action="<?= $_SERVER['PHP_SELF'] ?>" method="POST">
                     <h4 class="text-center font-weight-bold"> Sign-Up </h4>
@@ -108,7 +153,7 @@
                     </div> -->
                     <input type="submit" name="submit" class="btn btn-primary btn-block" value="Submit">
                     <div class="form-footer mt-2">
-                        <p> Sudah punya account? <a href="login.php">Login</a></p>
+                        <p> Sudah punya akun? <a href="login.php">Login</a></p>
                     </div>
                 </form>
             </section>
