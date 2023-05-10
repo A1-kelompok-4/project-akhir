@@ -78,41 +78,53 @@ if (isset($_POST['profil'])) {
     $profil = mysqli_fetch_assoc($result);
 }
 
-
-
-
-
-
-
 ?>
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Profile</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+</head>
 <body>
-    <h1>Profile </h1>
-    
-    <?php
-    if ($error != "") {
-        echo "<h3>" . $error . "</h3>";
-    }
-    ?>
+  <header>
+    <?php include "navbar.php"; ?>
+  </header>
+  <div class="container">
+    <h1 class="mt-5">Profile</h1>
+    <?php if ($error != ""): ?>
+      <div class="alert alert-danger mt-4" role="alert">
+        <?php echo $error; ?>
+      </div>
+    <?php endif; ?>
     <form method="post" enctype="multipart/form-data">
-
-        
-<input type="hidden" name="id_profil" value="<?php echo isset($profil['id_profil']) ? $profil['id_profil'] : ''; ?>">
-<input type="hidden" name="id_user" value="<?php echo isset($_SESSION['id_user']) ? $_SESSION['id_user'] : ''; ?>">
-<label for="nama_lengkap">Nama Lengkap:</label><br>
-<input type="text" id="nama_lengkap" name="nama_lengkap" value="<?php echo isset($profil['nama_lengkap']) ? $profil['nama_lengkap'] : ''; ?>"><br><br>
-<label for="email">Email:</label><br>
-<input type="email" id="email" name="email" value="<?php echo isset($profil['email']) ? $profil['email'] : ''; ?>"><br><br>
-<label for="nomor_hp">Nomor HP:</label><br>
-<input type="text" id="nomor_hp" name="nomor_hp" value="<?php echo isset($profil['nomor_hp']) ? $profil['nomor_hp'] : ''; ?>"><br><br>
-<label for="alamat">Alamat:</label><br>
-<textarea id="alamat" name="alamat"><?php echo isset($profil['alamat']) ? $profil['alamat'] : ''; ?></textarea><br><br>
-<input type="submit" name="profil" value="profil Perubahan">
-<p style="color:red"><?php echo isset($error) ? $error : ''; ?></p>
-
-</form>
-        
-        
+      <input type="hidden" name="id_profil" value="<?php echo isset($profil['id_profil']) ? $profil['id_profil'] : ''; ?>">
+      <input type="hidden" name="id_user" value="<?php echo isset($_SESSION['id_user']) ? $_SESSION['id_user'] : ''; ?>">
+      <div class="mb-3">
+        <label for="nama_lengkap" class="form-label">Nama Lengkap</label>
+        <input type="text" id="nama_lengkap" name="nama_lengkap" class="form-control" value="<?php echo isset($profil['nama_lengkap']) ? $profil['nama_lengkap'] : ''; ?>">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" id="email" name="email" class="form-control" value="<?php echo isset($profil['email']) ? $profil['email'] : ''; ?>">
+      </div>
+      <div class="mb-3">
+        <label for="nomor_hp" class="form-label">Nomor HP</label>
+        <input type="text" id="nomor_hp" name="nomor_hp" class="form-control" value="<?php echo isset($profil['nomor_hp']) ? $profil['nomor_hp'] : ''; ?>">
+      </div>
+      <div class="mb-3">
+        <label for="alamat" class="form-label">Alamat</label>
+        <textarea id="alamat" name="alamat" class="form-control"><?php echo isset($profil['alamat']) ? $profil['alamat'] : ''; ?></textarea>
+      </div>
+      <button type="submit" name="profil" class="btn btn-primary">Simpan Perubahan</button>
+      <p style="color:red"><?php echo isset($error) ? $error : ''; ?></p>
+    </form>
+  </div>
 </body>
 </html>
+
+<?php
+include "footer.php";
+?>

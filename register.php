@@ -30,7 +30,7 @@
     }
 
     .btn-primary {
-      background-color: #007bff;
+      background-color: #933ded;
       border: none;
       width: 100%;
       padding: 10px;
@@ -38,7 +38,7 @@
     }
 
     .btn-primary:hover {
-      background-color: #0069d9;
+      background-color: #999;
     }
 
     .form-footer {
@@ -47,7 +47,7 @@
     }
 
     .form-footer a {
-      color: #007bff;
+      color: #933ded;
       text-decoration: none;
     }
 

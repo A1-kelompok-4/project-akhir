@@ -38,7 +38,7 @@ div.container.my-5 h2{
 
 /* PRODUCT */
 .pemesanan.my-4{
-    background-color: rgb(225, 240, 248);
+    background-color: #e9e3f0;
     padding-left: 100px; 
     padding-right: 100px;
     padding-bottom: 20px;
@@ -55,11 +55,11 @@ TRANSAKSI */
 }
 
 .table {
-    background-color: rgb(226, 244, 247);
+    background-color: #f1e9fa;
     
 }
 
 .table th {
-    background-color: rgb(74, 122, 150);
+    background-color: #933ded;
 }
 
