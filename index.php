@@ -6,32 +6,62 @@
 
   <title>Products - Alfa Computer</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
-  <link rel="stylesheet"  type="text/css" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/navbar.css">
+  <style>
+    #official-brands .brand img {
+  max-width: 80px;
+  max-height: 80px;
+}
+
+#official-brands .brand {
+  margin-right: 10px;
+  padding: 0; /* Menghapus padding */
+}
+
+.official-brands {
+  background-color: #f5f5f5;
+  padding: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  max-width: 800px;
+  border-radius: 50px;
+  background-color: #ffffff;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Menambahkan efek bayangan */
+}
+
+.brand {
+  text-align: center;
+  margin: -10px -10px 20px -10px;
+}
+
+.brand img {
+  max-width: 100px;
+  max-height: 100px;
+}
+  </style>
 </head>
 
-<body>
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container">
-        <a class="navbar-brand" href="#">Alfa Computer</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav mr-3">
-          </ul>
-          <ul class="navbar-nav ms-auto justify-content-end">
-            <li class="nav-item">
-              <a class="nav-link" href="login.php">
-                <img src="https://cdn4.iconfinder.com/data/icons/essential-app-2/16/user-avatar-human-admin-login-128.png" alt="Logo Login" style="height: 20px; width: auto;">
-              </a>
-            </li>
-          </ul>
+<body class="mobile">
+    <nav>
+        <div class="container nav-wrapper">
+            <div class="brand">
+                <img src="img/logo.png" alt="" style="width: 100px;">
+                <span><strong>ALFA COMPUTER</strong></span>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+                    <ul>
+                    <a class="nav-link" href="login.php"><button class="btn">Login</button></a>
+                </li>
+            </ul>
         </div>
-      </div>
     </nav>
-  </header>
-  
+  <br><br>
   <div id="banner">
     <img src="https://enterkomputer.com/web-assets/frontend/banner/home/Banner-Slider-Home-Prosessor_Intel-1633090287.jpg" width="100%" height="100%"/>
     <div id="layer-bg"></div>
@@ -136,10 +166,9 @@
     </div>
   </div>
 </section>
-  <footer class="bg-light py-3">
-    <div class="container">
-      <p style="text-align: center;">&copy; 2023 Alfa Computer</p>
-    </div>
-  </footer>
+<script src="JS/navbar.js"></script>
    </body>
 </html>
+<?php
+include "footer.php";
+?>

@@ -115,3 +115,6 @@ function cek_nama($username, $conn)
 </body>
 
 </html>
+<?php
+include "footer.php";
+?>

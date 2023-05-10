@@ -33,6 +33,7 @@ if (isset($_POST['submit'])) {
     //jika nama dan password lebih besar dari 0 maka user ditemukan
     if ($rows > 0) {
       $data = mysqli_fetch_assoc($result);
+      echo $rows;
 
       // cek jika user login sebagai admin
       if ($data['hak_akses'] == "admin") {
@@ -54,6 +55,7 @@ if (isset($_POST['submit'])) {
       } elseif ($data['hak_akses'] == "user") {
         // buat session login dan nama
         $_SESSION['nama'] = $nama;
+        $_SESSION['id_user'] = $data['id_user'];
         $_SESSION['hak_akses'] = "user";
         // alihkan ke halaman dashboard pengurus
         header("location:dashboard.php");
@@ -63,7 +65,7 @@ if (isset($_POST['submit'])) {
         header("location:dashboard.php?pesan=gagal");
       }
     } else {
-      header("location:dashboard.php?pesan=gagal");
+       header("location:dashboard.php?pesan=gagal");
     }
   }
 }
