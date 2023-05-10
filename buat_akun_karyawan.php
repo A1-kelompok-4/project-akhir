@@ -63,7 +63,52 @@ function cek_nama($username, $conn)
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <style>
+    .form-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px #888;
+    }
 
+    .form-group label {
+      font-weight: bold;
+    }
+
+    .form-group input {
+      width: 100%;
+      border-radius: 5px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border: none;
+      width: 100%;
+      padding: 10px;
+      font-weight: bold;
+    }
+
+    .btn-primary:hover {
+      background-color: #0069d9;
+    }
+
+    .form-footer {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .form-footer a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .form-footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
   <!-- costum css -->
   <link rel="stylesheet" href="CSS/navbar.css">
   <title>Registrasi Karyawan</title>
@@ -113,6 +158,10 @@ function cek_nama($username, $conn)
             <label for="nama">Username</label>
             <input type="text" class="form-control" id="nama" name="username" placeholder="Masukkan Username">
           </div>
+          <!-- <div class="form-group">
+                        <label for="nama">Nama</label>
+                        <input type="text" class="form-control" id="nama" name="nama" aria-describeby="passwordHelp" placeholder="Masukkan password">
+                    </div> -->
           <div class="form-group">
             <label for="InputPassword">Password</label>
             <input type="password" class="form-control" id="InputPassword" name="password" placeholder="Password">
@@ -121,6 +170,10 @@ function cek_nama($username, $conn)
             <label for="InputPassword">Re-Password</label>
             <input type="password" class="form-control" id="InputRePassword" name="repassword" placeholder="Re-Password">
           </div>
+          <!-- <div class="form-group">
+                        <label for="InputAkses">akses</label>
+                        <input type="password" class="form-control" id="InputAkses" name="repassword" placeholder="user">
+                    </div> -->
           <input type="submit" name="submit" class="btn btn-primary btn-block" value="Buat">
         </form>
       </section>

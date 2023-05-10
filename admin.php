@@ -19,6 +19,8 @@ if (!isset($_SESSION['hak_akses']) || (isset($_SESSION['hak_akses']) && $_SESSIO
 <link rel="stylesheet" href="CSS/navbar.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+<link rel="stylesheet" href="CSS/style.css" />
+
 <head>
 </head>
 
@@ -52,8 +54,9 @@ if (!isset($_SESSION['hak_akses']) || (isset($_SESSION['hak_akses']) && $_SESSIO
     </header>
     <div class="wrapper">
         <section id="home">
-            <h3>Data Transaksi</h3>
-            <table id="example" class="table table-striped" style="width:100%">
+            <br><br>
+            <h3 class="text-center">Data Transaksi</h3>
+            <table id="example" class="table table-striped">
             <thead>
             <tr>
 					<!-- <th>no</th> -->
