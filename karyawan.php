@@ -11,6 +11,9 @@ $result =mysqli_query($conn, $query);
 <link rel="stylesheet" href="CSS/style.css" />
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css" integrity="sha512-xxxxxx" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css" integrity="sha512-xxxxxx" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.bundle.min.js" integrity="sha512-xxxxxx" crossorigin="anonymous"></script>
 
 <style>
     footer div.container {
@@ -47,7 +50,11 @@ section {
     </nav>
     </header>
     <section>
-        <h1>CRUD ADMIN</h1>
+        <h1>CRUD ALFA COMPUTER</h1>
+    <div class="d-flex justify-content-between align-items-center">
+        <h2></h2>
+        <a href="tambah.php" class="btn btn-primary"><i class="bi bi-plus"></i> Tambah</a>
+    </div>
         <table id="example" class="table table-striped" style="width:100%">
         <thead>
             <tr>
@@ -81,11 +88,14 @@ section {
                 </td>
 
                 <td>
-                    <a href="hapus.php?id_barang=<?php echo $row['id_barang'] ?>">hapus</a>
-                    <a href="update.php?id_barang=<?php echo $row['id_barang'] ?>">update </a>
-                    <a href="tambah.php">tambah</a>
+    <a href="hapus.php?id_barang=<?php echo $row['id_barang'] ?>">
+        <span class="badge bg-danger"><i class="bi bi-trash"></i> Hapus</span>
+    </a>
+    <a href="update.php?id_barang=<?php echo $row['id_barang'] ?>">
+        <span class="badge bg-warning text-dark"><i class="bi bi-pencil-square"></i> Update</span>
+    </a>
+</td>
 
-                </td>
             </tr>
             <?php $i++?>
             <?php }?>

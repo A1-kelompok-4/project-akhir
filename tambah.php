@@ -44,35 +44,81 @@ if (isset($_POST["tambah"])) {
 
 ?>
 <html>
+  <head>
+    
+    <title>Tambah Data</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/navbar.css">
+  </head>
+  <body>
+  <header>
+  <nav>
+        <div class="container nav-wrapper">
+            <div class="brand">
+                <img src="img/logo.png" alt="" style="width: 100px;">
+                <span><strong>ALFA COMPUTER</strong></span>
+            </div>
+            <ul class="nav-list nav-right" style="display: flex; justify-content: flex-end;">
+ 
+        <a class="nav-link" href="karyawan.php">
+            <button class="btn">Home</button>
+        </a>
+    </li>
 
-<body>
-    <h1>tambah data</h1>
-    <?php 
-        if($error != "") {
-            echo "<h3>".$error."</h3>";
-        } 
-    ?>
-    <form method="post" enctype="multipart/form-data">
-        Id barang:
-        <input type="text" name="id_barang">
-        <br>
-        Nama barang:
-        <input type="text" name="nama_barang">
-        <br>
-        Harga:
-        <input type="text" name="harga">
-        <br>
-        stok:
-        <input type="text" name="stok">
-        <br>
-        gambar:
-        <input type="file" name="gambar">
-        <br>
-        <button type="submit" name="tambah">tambah</button>
-    </form>
-</body>
-
+        <a class="nav-link" href="logout.php">
+            <button class="btn">Logout</button>
+        </a>
+    </li>
+</ul>
+        </div>
+    </nav>
+    <header>
+        <br><br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mx-auto border p-3">
+          <h1 class="text-center mb-4">Tambah Data</h1>
+          <?php 
+            if($error != "") {
+              echo "<div class='alert alert-danger'>".$error."</div>";
+            } 
+          ?>
+          <form method="post" enctype="multipart/form-data">
+            <div class="form-group">
+              <label for="id_barang">Id barang:</label>
+              <input type="text" class="form-control" name="id_barang" id="id_barang">
+            </div>
+            <div class="form-group">
+              <label for="nama_barang">Nama barang:</label>
+              <input type="text" class="form-control" name="nama_barang" id="nama_barang">
+            </div>
+            <div class="form-group">
+              <label for="harga">Harga:</label>
+              <input type="text" class="form-control" name="harga" id="harga">
+            </div>
+            <div class="form-group">
+              <label for="stok">Stok:</label>
+              <input type="text" class="form-control" name="stok" id="stok">
+            </div>
+            <div class="form-group">
+              <label for="gambar">Gambar:</label>
+              <input type="file" class="form-control-file" name="gambar" id="gambar">
+            </div>
+            <button type="submit" class="btn btn-primary" name="tambah">Tambah</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+      integrity="sha384-Hrv0zp3bAV9zjhpV7VPJyGv/wq3pW8BSzoBh7n0JlFvV2HNuj8cMjhssJjsmmjfc"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-q8i/X+965/DZI0uP7vBT8veRVOlw2wlFjL2+1tCFw8cIAhAftLD5+5WXOJ5FdRT0"
+      crossorigin="anonymous"></script>
+  </body>
 </html>
+
 <?php
 include "footer.php";
 ?>
