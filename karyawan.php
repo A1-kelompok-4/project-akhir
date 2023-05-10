@@ -69,13 +69,15 @@ section {
                 <td><?php echo $row["nama_barang"]?></td>
                 <td><?php echo $row["harga"]?></td>
                 <td><?php echo $row["stok"]?></td>
-                <?php
-                  if ($row["img_path"]) {
-                      echo "<td><a href=".$row["img_path"]." target="."_blank"." rel="."noopener noreferrer".">Lihat</a></td>";
-                    } else {
-                      echo "<td><p>Tidak ada gambar</p></td>";
-                  }
-                ?>
+                <td>
+                    <?php if ($row["img_path"]) { ?>
+                    <a href="<?php echo $row["img_path"] ?>" target="_blank" rel="noopener noreferrer">
+                        <img src="<?php echo $row["img_path"] ?>" alt="<?php echo $row["nama_barang"] ?>" width="50">
+                    </a>
+                    <?php } else { ?>
+                    <p>Tidak ada gambar</p>
+                    <?php } ?>
+                </td>
 
                 <td>
                     <a href="hapus.php?id_barang=<?php echo $row['id_barang'] ?>">hapus</a>
