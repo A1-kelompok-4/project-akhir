@@ -113,10 +113,6 @@ function cek_nama($username, $conn)
             <label for="nama">Username</label>
             <input type="text" class="form-control" id="nama" name="username" placeholder="Masukkan Username">
           </div>
-          <!-- <div class="form-group">
-                        <label for="nama">Nama</label>
-                        <input type="text" class="form-control" id="nama" name="nama" aria-describeby="passwordHelp" placeholder="Masukkan password">
-                    </div> -->
           <div class="form-group">
             <label for="InputPassword">Password</label>
             <input type="password" class="form-control" id="InputPassword" name="password" placeholder="Password">
@@ -125,10 +121,6 @@ function cek_nama($username, $conn)
             <label for="InputPassword">Re-Password</label>
             <input type="password" class="form-control" id="InputRePassword" name="repassword" placeholder="Re-Password">
           </div>
-          <!-- <div class="form-group">
-                        <label for="InputAkses">akses</label>
-                        <input type="password" class="form-control" id="InputAkses" name="repassword" placeholder="user">
-                    </div> -->
           <input type="submit" name="submit" class="btn btn-primary btn-block" value="Buat">
         </form>
       </section>
