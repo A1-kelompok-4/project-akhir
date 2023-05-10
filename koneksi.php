@@ -11,4 +11,5 @@ $conn = mysqli_connect($host, $user, $password, $db);
 if(!$conn){
     die("gagal terhubung database".mysqli_connect_error());
 }
+// echo "berhasil";
 ?>
