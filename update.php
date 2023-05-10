@@ -49,3 +49,6 @@ if(isset($_POST["update"])) {
     </form>
   </body>
 </html>
+<?php
+include "footer.php";
+?>

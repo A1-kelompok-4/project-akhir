@@ -8,30 +8,9 @@
 </head>
 <body>
   <header>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container">
-        <a class="navbar-brand" href="#">Alfa Computer</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="index.php">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="products.php">Products</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="about.php">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://wa.wizard.id/627b7a">Contact Us</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+  <?php
+include "navbar.php";
+?>
 	</header>
 	<div class="container my-5"> 
     <br>   
@@ -63,3 +42,6 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/js/bootstrap.min.js"></script>
 </body>
 </html>
+<?php
+include "footer.php";
+?>

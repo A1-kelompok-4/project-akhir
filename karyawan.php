@@ -7,6 +7,11 @@ $result =mysqli_query($conn, $query);
 
 <html>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="CSS/navbar.css">
+<link rel="stylesheet" href="CSS/style.css" />
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+
 <style>
     footer div.container {
     width: 25%;
@@ -15,47 +20,35 @@ $result =mysqli_query($conn, $query);
     color: rgb(20, 16, 65);
     border-radius: 16px;
 }
+section {
+        padding: 20px;
+        text-align: center;
+        margin-bottom: 80px; /* tambahkan margin-bottom agar tidak menimpa footer */
+        }
 </style>
-    <body>
-    <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container">
-        <a class="navbar-brand" href="#">Alfa Computer</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-                  
-        <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav mr-3">
-        <li class="nav-item">
-            <a class="nav-link" href="karyawan.php">Home</a>
-        </li>
-    </ul>
-    <ul class="navbar-nav ms-auto justify-content-end">
-  <li class="nav-item">
-    <a class="nav-link" href="transaksi.php">
-      <img src="https://cdn1.iconfinder.com/data/icons/business-management-and-growth-21/64/1051-128.png" alt="Logo Riwayat Transaksi" style="height: 30px; width: auto;">
-    </a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="logout.php">
-      <img src="https://cdn2.iconfinder.com/data/icons/user-interface-line-38/24/Untitled-5-11-128.png" alt="Logo Logout" style="height: 20px; width: auto;">
-    </a>
-  </li>
-</ul>
-
-</div>
-</div>
-
-
+<body class="mobile">
+    <nav>
+        <div class="container nav-wrapper">
+            <div class="brand">
+                <img src="img/logo.png" alt="" style="width: 100px;">
+                <span><strong>ALFA COMPUTER</strong></span>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+                    <ul>
+                    <a class="nav-link" href="logout.php"><button class="btn">Logout</button></a>
+                </li>
+            </ul>
         </div>
-      </div>
     </nav>
     </header>
-        <h1>halaman utama</h1>
-        <a href="tambah.php">tambah</a>
-        <table border="1" cellpadding="10" cellspacing="0">
-
+    <section>
+        <h1>CRUD ADMIN</h1>
+        <table id="example" class="table table-striped" style="width:100%">
+        <thead>
             <tr>
                 <th>no</th>
                 <th>id_barang barang</th>
@@ -65,6 +58,8 @@ $result =mysqli_query($conn, $query);
                 <th>gambar</th>
                 <th>edit</th>
             </tr>
+          </thead>
+          <tbody>
             <?php
             $i =1;
              while($row =mysqli_fetch_assoc($result)){ ?>
@@ -85,14 +80,31 @@ $result =mysqli_query($conn, $query);
                 <td>
                     <a href="hapus.php?id_barang=<?php echo $row['id_barang'] ?>">hapus</a>
                     <a href="update.php?id_barang=<?php echo $row['id_barang'] ?>">update </a>
+                    <a href="tambah.php">tambah</a>
+
                 </td>
             </tr>
             <?php $i++?>
             <?php }?>
+            <tbody>
         </table>
-        <footer class="bg-light py-3">
-            <div class="container">
-            <p style="text-align: center;">&copy; 2023 Alfa Computer</p>
-        </footer>
-    </body>
+        <script src="JS/navbar.js"></script>
+        </section>
+   </body>
 </html>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $('#example').DataTable({
+        paging: false,
+        ordering: false,
+        info: false,
+        searching: false,
+    });
+});
+</script>
+
+<?php
+include "footer.php";
+?>
