@@ -1,6 +1,12 @@
 <head>
     <link rel="stylesheet" href="CSS/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    .footer-media a {
+    text-decoration: none; /* menonaktifkan garis bawah */
+}
+
+</style>
 </head>
     <footer class="footer">
         <div class="footer-left">
@@ -24,7 +30,7 @@
             </div>
             <div>
                 <i class="fa fa-envelope"></i>
-                <p><a href="#"> alfacomputer@gmail.com</a></p>
+                <p><a href="#"  style="color: #933ded;"> alfacomputer@gmail.com</a></p>
             </div>
         </div>
 
@@ -38,10 +44,10 @@
             </p>
 
             <div class="footer-media">
-                <a href="#"><i class="fa fa-youtube"></i></a>
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#" class="fa fa-youtube"></a>
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-instagram"></a>
             </div>
         </div>
 

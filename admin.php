@@ -14,14 +14,41 @@ if (!isset($_SESSION['hak_akses']) || (isset($_SESSION['hak_akses']) && $_SESSIO
 ?>
 
 <!DOCTYPE html>
+<head>
 <html lang="en">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="CSS/navbar.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
-<link rel="stylesheet" href="CSS/style.css" />
+<!-- <link rel="stylesheet" href="CSS/style.css" /> -->
+<style>
+   .table-striped {
+  border-collapse: collapse;
+  margin: auto;
+  text-align: center;
+  padding: 10px;
+  width: 80%;
+}
 
-<head>
+.table-striped td, .table-striped th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.table-striped tr:nth-child(even){
+  background-color: #f2f2f2;
+}
+
+.table-striped th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: #933DED;
+  color: white;
+}
+
+
+  </style>
+
 </head>
 
 <body>
@@ -55,19 +82,21 @@ if (!isset($_SESSION['hak_akses']) || (isset($_SESSION['hak_akses']) && $_SESSIO
     <div class="wrapper">
         <section id="home">
             <br><br>
-            <h3 class="text-center">Data Transaksi</h3>
+            <h2 class="text-center" style="font-weight: bold; color: #fffff; text-shadow: 2px 2px #CCCCCC;">Data Transaksi</h2>
+
             <table id="example" class="table table-striped">
             <thead>
             <tr>
 					<!-- <th>no</th> -->
-					<th>ID Transaksi</th>
-					<th>User</th>
-					<th>ID Barang</th>
-					<th>Nama Barang</th>
-					<th>Tanggal Transaksi</th>
-					<th>Alamat</th>
-					<th>Total Bayar</th>
-					<th>Status</th>
+					<th style="text-align: center;">ID Transaksi</th>
+                    <th style="text-align: center;">User</th>
+                    <th style="text-align: center;">ID Barang</th>
+                    <th style="text-align: center;">Nama Barang</th>
+                    <th style="text-align: center;">Tanggal Transaksi</th>
+                    <th style="text-align: center;">Alamat</th>
+                    <th style="text-align: center;">Total Bayar</th>
+                    <th style="text-align: center;">Status</th>
+
 				</tr>
         </thead>
         <tbody>

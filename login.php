@@ -84,6 +84,7 @@ if (isset($_POST['submit'])) {
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="CSS/navbar.css">
 
   <!-- Custom CSS -->
   <style>
@@ -107,7 +108,7 @@ if (isset($_POST['submit'])) {
     }
 
     .btn-primary {
-      background-color: #007bff;
+      background-color: #933ded;
       border: none;
       width: 100%;
       padding: 10px;
@@ -115,7 +116,7 @@ if (isset($_POST['submit'])) {
     }
 
     .btn-primary:hover {
-      background-color: #0069d9;
+      background-color: #999;
     }
 
     .form-footer {
@@ -124,7 +125,7 @@ if (isset($_POST['submit'])) {
     }
 
     .form-footer a {
-      color: #007bff;
+      color: #933ded;
       text-decoration: none;
     }
 

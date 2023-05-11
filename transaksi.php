@@ -61,7 +61,7 @@ $transaksiResult = mysqli_query($conn, $getTransaksiDataQuery);
 include "navbar.php";
 ?>
   </header>
-	<div class="wrapper" style="background-image: url('img/bg1.png');">
+	<div class="wrapper">
 		<section id="home">
 			<br>
 			<h2 style="text-align: center;">Riwayat Transaksi <?php if ($user['hak_akses'] == 'user') echo "User"; ?></h2>
