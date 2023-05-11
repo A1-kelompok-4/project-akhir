@@ -13,5 +13,5 @@ session_start();
     $_SESSION["msg"] = "Gagal mengupdate data transaksi!";
   }
 
-  header("Location:transaksi.php");
+  header("Location:transaksi_karyawan.php");
 ?>

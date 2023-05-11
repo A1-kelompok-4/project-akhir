@@ -18,7 +18,7 @@ div.awal p {
 
 div.container.my-5{
 
-    background-color: rgb(225, 240, 248);
+    background-color: #e9e3f0;
 }
 div.container.my-5 img{
     margin: 10px 10px 10px 10px;
@@ -26,13 +26,13 @@ div.container.my-5 img{
 }
 div.container.my-5 h1{
     text-align:center; 
-    background-color: rgb(76, 159, 232);
+    background-color: #933ded;
     border-radius: 20px;
 }
 
 div.container.my-5 h2{
     text-align:center; 
-    background-color: rgb(134, 183, 226);
+    background-color: #933ded;
     border-radius: 20px;
 }
 
@@ -45,7 +45,7 @@ div.container.my-5 h2{
 }
 
 button:hover {
-    background-color: #092f65;
+    background-color: #933ded;
   }
 
 /*   

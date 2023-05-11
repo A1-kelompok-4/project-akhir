@@ -46,7 +46,7 @@ if (isset($_POST["tambah"])) {
 <html>
   <head>
     
-    <title>Tambah Data</title>
+  <title>Karyawan - Alfa Computer</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="CSS/navbar.css">
   </head>
