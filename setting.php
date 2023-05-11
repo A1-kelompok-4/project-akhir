@@ -85,7 +85,7 @@ if (isset($_POST['profil'])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Profile</title>
+  <title>Profile - Alfa Computer</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
 </head>
 <body>
@@ -93,7 +93,9 @@ if (isset($_POST['profil'])) {
     <?php include "navbar.php"; ?>
   </header>
   <div class="container">
-    <h1 class="mt-5">Profile</h1>
+    <br><br>
+  <h2 style="font-weight: bold; color: #fffff; text-shadow: 2px 2px #CCCCCC;">Profile</h2>
+  <br>
     <?php if ($error != ""): ?>
       <div class="alert alert-danger mt-4" role="alert">
         <?php echo $error; ?>

@@ -15,6 +15,7 @@ if (!isset($_SESSION['hak_akses']) || (isset($_SESSION['hak_akses']) && $_SESSIO
 
 <!DOCTYPE html>
 <head>
+<title>Admin - Alfa Computer</title>
 <html lang="en">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="CSS/navbar.css">
@@ -87,7 +88,6 @@ if (!isset($_SESSION['hak_akses']) || (isset($_SESSION['hak_akses']) && $_SESSIO
             <table id="example" class="table table-striped">
             <thead>
             <tr>
-					<!-- <th>no</th> -->
 					<th style="text-align: center;">ID Transaksi</th>
                     <th style="text-align: center;">User</th>
                     <th style="text-align: center;">ID Barang</th>
@@ -122,7 +122,6 @@ if (!isset($_SESSION['hak_akses']) || (isset($_SESSION['hak_akses']) && $_SESSIO
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
-<!-- Bootstrap requirement jQuery pada posisi pertama, kemudian Popper.js, dan  yang terakhit Bootstrap JS -->
 
 </html>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>

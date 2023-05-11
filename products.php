@@ -7,6 +7,12 @@ session_start();
 // if (isset($_POST['pesan'])) {
 // 	header("location:index.php");	
 // }
+
+//mengecek username pada session
+if( !isset($_SESSION['nama']) ){
+  echo "<script>alert('Anda harus login untuk mengakses halaman ini');window.location.href='login.php';</script>";
+  exit;
+}
 ?>
 <html>
 <head>
@@ -31,7 +37,7 @@ include "navbar.php";
   <section>
 
   <main class="container my-4">
-    <h2 class="text-center">Featured Products</h2>
+  <h2 class="text-center" style="font-weight: bold; color: #fffff; text-shadow: 2px 2px #CCCCCC;">Featured Products</h2>
     <table class="table table-striped table-hover" id="example" >
 
       <thead >
@@ -71,7 +77,7 @@ include "navbar.php";
 
     <div class="pemesanan my-4">
       <br>
-      <h2 style="text-align: center;">Pesan Barang:</h2>
+      <h2 class="text-center" style="font-weight: bold; color: #fffff; text-shadow: 2px 2px #CCCCCC;">Pesan Barang:</h2>
 	  <br>
       <form action="pesan_product.php" method="POST">
         <div class="form-group row">

@@ -1,13 +1,13 @@
 (function($) {
 	"use strict"
 
-	// Mobile Nav toggle
+	// Mobile
 	$('.menu-toggle > a').on('click', function (e) {
 		e.preventDefault();
 		$('#responsive-nav').toggleClass('active');
 	})
 
-	// Fix cart dropdown from closing
+	// Fix cart
 	$('.cart-dropdown').on('click', function (e) {
 		e.stopPropagation();
 	});
