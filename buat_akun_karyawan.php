@@ -55,13 +55,13 @@ function cek_nama($username, $conn)
 <html lang="en">
 
 <head>
+  <title>Admin - Alfa Computer</title>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
   <meta nama="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="CSS/navbar.css">
-  <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <style>
     .form-container {
@@ -159,10 +159,6 @@ function cek_nama($username, $conn)
             <label for="nama">Username</label>
             <input type="text" class="form-control" id="nama" name="username" placeholder="Masukkan Username">
           </div>
-          <!-- <div class="form-group">
-                        <label for="nama">Nama</label>
-                        <input type="text" class="form-control" id="nama" name="nama" aria-describeby="passwordHelp" placeholder="Masukkan password">
-                    </div> -->
           <div class="form-group">
             <label for="InputPassword">Password</label>
             <input type="password" class="form-control" id="InputPassword" name="password" placeholder="Password">

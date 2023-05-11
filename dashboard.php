@@ -4,8 +4,8 @@ session_start();
 
 //mengecek username pada session
 if( !isset($_SESSION['nama']) ){
-  $_SESSION['msg'] = 'anda harus login untuk mengakses halaman ini';
-  header('Location: login.php');
+  echo "<script>alert('Anda harus login untuk mengakses halaman ini');window.location.href='login.php';</script>";
+  exit;
 }
 ?>
 
@@ -16,20 +16,18 @@ if( !isset($_SESSION['nama']) ){
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>Products - Alfa Computer</title>
+  <title>Dashboard - Alfa Computer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="CSS/style.css">
   <style>
-      section {
-        padding: 20px;
-        text-align: center;
-        margin-bottom: 80px; /* tambahkan margin-bottom agar tidak menimpa footer */
-        }
-         /* Style CSS khusus */
-
-        /* bulat bulat geser */
+    section {
+      padding: 20px;
+      text-align: center;
+      margin-bottom: 80px; /* tambahkan margin-bottom agar tidak menimpa footer */
+      }
+    /* bulat bulat geser */
     .swiper-container {
       width: 100%;
       height: 410px;
@@ -88,7 +86,7 @@ include "navbar.php";
   </div>
   <section>
     <br><br>
-    <h4>Alfa Komputer</h4>
+    <h4 class="text-center" style="font-weight: bold; color: #fffff; text-shadow: 2px 2px #CCCCCC;">Alfa Computer</h4>
 		<p>Kami menyediakan berbagai macam produk komputer dengan harga terbaik</p>
         <p>Alfa Komputer menghadirkan produk-produk Elektronik Komputer berkualitas dari brand-brand ternama seperti Notebook, Desktop PC, Komponen PC Rakitan, Sparepart, Printer, UPS, Gadget, Smartphone dan ratusan jenis produk aksesoris elektronik komputer. Dengan mengedepankan kualitas produk, kualitas layanan penjualan serta after-sales service. 
         Alfa Komputer senantiasa berusaha untuk terus maksimal melayani kebutuhan anda dalam mendapatkan produk elektronik komputer yang anda butuhkan. Didukung oleh staff-staff profesional yang telah berpengalaman dalam memberikan rekomendasi produk serta spesifikasi yang sesuai dengan kebutuhan dan budget anda.</p>

@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/navbar.css">
+    <style>
+    .nav-list {
+        padding-left: 3em;
+    }
+</style>
+
 
 </head>
 
@@ -15,20 +21,16 @@
             <img src="img/logo.png" alt="" style="width: 100px;">
             <span><strong>ALFA COMPUTER</strong></span>
         </div>
-
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul class="nav-list nav-center">
-                <li class="active">
+            <ul class="nav-list">
+                <li>
                     <a class="nav-link" href="dashboard.php">Home</a>
                 </li>
                 <li><a class="nav-link" href="products.php">Products</a></li>
                 <li>
                     <a class="nav-link" href="transaksi.php">Transaksi</a>
                 </li>
+                <li><a class="nav-link" href="about.php">About Us</a></li>
+                <li><a class="nav-link" href="https://wa.wizard.id/627b7a">Contact</a></li>
                 
                     </ul>
                     <ul class="nav-list nav-right" style="display: flex; justify-content: flex-end;">

@@ -6,16 +6,22 @@ $result =mysqli_query($conn, $query);
 ?>
 
 <html>
+<title>Karyawan - Alfa Computer</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="CSS/navbar.css">
 <link rel="stylesheet" href="CSS/style.css" />
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css" integrity="sha512-xxxxxx" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css" integrity="sha512-xxxxxx" crossorigin="anonymous" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.bundle.min.js" integrity="sha512-xxxxxx" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css" integrity="sha512-xxxxxx" crossorigin="anonymous" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.bundle.min.js" integrity="sha512-xxxxxx" crossorigin="anonymous"></script>
 
 <style>
+  
+    .dataTables_filter {
+    text-align: right;
+    margin-bottom: 10px;
+    }
     footer div.container {
     width: 25%;
     padding: 10px 10px 5px 5px;
@@ -37,15 +43,18 @@ section {
                 <img src="img/logo.png" alt="" style="width: 100px;">
                 <span><strong>ALFA COMPUTER</strong></span>
             </div>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-                    <ul>
-                    <a class="nav-link" href="logout.php"><button class="btn">Logout</button></a>
-                </li>
-            </ul>
+            <ul class="nav-list nav-right" style="display: flex; justify-content: flex-end;">
+    <li>
+        <a class="nav-link" href="transaksi_karyawan.php">
+            <button class="btn">Update Transaksi</button>
+        </a>
+    </li>
+    <li>
+        <a class="nav-link" href="logout.php">
+            <button class="btn">Logout</button>
+        </a>
+    </li>
+</ul>
         </div>
     </nav>
     </header>
@@ -113,7 +122,7 @@ section {
         paging: false,
         ordering: false,
         info: false,
-        searching: false,
+        searching: true,
     });
 });
 </script>

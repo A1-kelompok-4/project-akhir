@@ -23,7 +23,7 @@ if (mysqli_num_rows($userResult) == 1) {
 $getTransaksiDataQuery = "SELECT *, user.username, barang.nama_barang, barang.img_path FROM transaksi JOIN user ON user.id_user = transaksi.id_user JOIN barang ON barang.id_barang = transaksi.id_barang";
 
 if ($user['hak_akses'] == "user") {
-	$getTransaksiDataQuery .= " WHERE transaksi.id_user = '" . $user['id'] . "'";
+	$getTransaksiDataQuery .= " WHERE transaksi_karyawan.id_user = '" . $user['id'] . "'";
 }
 
 $transaksiResult = mysqli_query($conn, $getTransaksiDataQuery);
@@ -46,9 +46,19 @@ $transaksiResult = mysqli_query($conn, $getTransaksiDataQuery);
   <title>Transaksi - Alfa Computer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css" integrity="sha512-xxxxxx" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css" integrity="sha512-xxxxxx" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.bundle.min.js" integrity="sha512-xxxxxx" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="CSS/style.css" />
+  <link rel="stylesheet" href="CSS/navbar.css">
+
   <style>
+     .dataTables_filter {
+    text-align: right;
+    margin-bottom: 10px;
+    }
     section {
         padding: 20px;
         text-align: center;
@@ -60,9 +70,27 @@ $transaksiResult = mysqli_query($conn, $getTransaksiDataQuery);
 </head>
 <body>
   <header>
-  <?php
-include "navbar.php";
-?>
+  <body class="mobile">
+    <nav>
+        <div class="container nav-wrapper">
+            <div class="brand">
+                <img src="img/logo.png" alt="" style="width: 100px;">
+                <span><strong>ALFA COMPUTER</strong></span>
+            </div>
+            <ul class="nav-list nav-right" style="display: flex; justify-content: flex-end;">
+    <li>
+        <a class="nav-link" href="karyawan.php">
+            <button class="btn">Home</button>
+        </a>
+    </li>
+    <li>
+        <a class="nav-link" href="logout.php">
+            <button class="btn">Logout</button>
+        </a>
+    </li>
+</ul>
+        </div>
+    </nav>
   </header>
 	<div class="wrapper">
 		<section id="home">
@@ -78,7 +106,7 @@ include "navbar.php";
 				?>
 			</h3>
 			<div class="container">
-    <table class="table">
+            <table id="example" class="table table-striped" style="width:100%">
         <thead>
             <tr>
                 <th>ID Transaksi</th>
@@ -152,6 +180,7 @@ include "navbar.php";
             } ?>
         </tbody>
     </table>
+    <script src="JS/navbar.js"></script>
     <br>
 </div>
 
@@ -164,6 +193,18 @@ include "navbar.php";
 </body>
 
 </html>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $('#example').DataTable({
+        paging: false,
+        ordering: false,
+        info: false,
+        searching: true,
+    });
+});
+</script>
 <?php
 include "footer.php";
 ?>
