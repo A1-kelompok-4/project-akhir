@@ -57,7 +57,7 @@
     $updateBarangResult = mysqli_query($conn, $updateBarangQuery);
     if ($updateBarangResult) {
       $_SESSION['msg'] = "Berhasil memesan barang";
-      header("Location:products.php");
+      echo '<script>alert("Berhasil memesan barang"); window.history.back();</script>';
     } else {
       echo "Gagal memesan barang";
     }
