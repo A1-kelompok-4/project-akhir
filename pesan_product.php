@@ -113,6 +113,10 @@
     $updateBarangResult = mysqli_query($conn, $updateBarangQuery);
     
     if ($updateBarangResult) {
+<<<<<<< HEAD
+      $_SESSION['msg'] = "Berhasil memesan barang";
+      echo '<script>alert("Berhasil memesan barang"); window.history.back();</script>';
+=======
       ?>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.1"></script>
       <script>
@@ -137,6 +141,7 @@
       </script>
       <?php
       exit;
+>>>>>>> 6e5c5b7829783a09a1d2577df30af1bf11b38667
     } else {
       ?>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.1"></script>
