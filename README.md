@@ -2,6 +2,7 @@
 
 **TAMPILAN AWAL WEBSITE**
 ![1(halaman pertama index php)](https://github.com/Aminarti/project-akhir/assets/120153116/bc0ad493-bbfa-4655-a043-98fab8e8a5f3)
+
 Dapat dilihat pada gambar tampilan awal website berisikan tentang brand apa saja yang terdapat Alfa Computer.
 Kemudian untuk masuk ke website pengguna dapat mengklik *“Login”* yang berada di ujung kanan website.
 Terdapat 3 role dalam website ini yaitu :
